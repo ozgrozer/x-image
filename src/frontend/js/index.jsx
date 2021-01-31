@@ -29,6 +29,16 @@ const App = () => {
     setImageData(res.data)
   }
 
+  const saveBase64AsFile = (base64, fileName) => {
+    const link = document.createElement('a')
+    document.body.appendChild(link)
+    link.setAttribute('type', 'hidden')
+    link.href = `data:text/plain;base64, ${base64}`
+    link.download = fileName
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <div>
       <Form
@@ -106,7 +116,20 @@ const App = () => {
             {
               imageData
                 ? (
-                  <img src={`data:image/png;base64, ${imageData}`} className='generatedImage' />
+                  <div>
+                    <img
+                      className='generatedImage'
+                      src={`data:image/png;base64,${imageData}`}
+                    />
+
+                    <button
+                      type='button'
+                      className='saveImageButton'
+                      onClick={() => saveBase64AsFile(imageData, 'tweet.png')}
+                    >
+                      Save
+                    </button>
+                  </div>
                   )
                 : (
                   <div className='helpText'>
@@ -121,7 +144,7 @@ const App = () => {
           </div>
         </fieldset>
 
-        <button />
+        <button className='submitButton' />
       </Form>
     </div>
   )
