@@ -29,6 +29,7 @@ input, select {
   font-size: 16px;
   padding: 0 15px;
   appearance: none;
+  border-radius: 4px;
   -moz-appearance: none;
   -webkit-appearance: none;
   border: 1px solid #cdd6dd;
@@ -66,16 +67,27 @@ select {
     clear: both;
     display: table;
   }
+  &.one {
+    .inputWrapper {
+      width: 100%;
+    }
+  }
+  &.two {
+    .inputWrapper {
+      width: 245px;
+    }
+  }
+  &.three {
+    .inputWrapper {
+      width: 160px;
+    }
+  }
 
   .inputWrapper {
     float: left;
-    width: 245px;
     margin-left: 10px;
     &:first-child {
       margin-left: 0;
-    }
-    &.full {
-      width: 100%;
     }
 
     label {
@@ -93,6 +105,7 @@ select {
 .generatedImageWrapper {
   width: 100%;
   margin-top: 20px;
+  border-radius: 4px;
   border: 1px solid #cdd6dd;
 
   .generatedImage {
@@ -101,6 +114,7 @@ select {
 
   .helpText {
     min-height: 200px;
+    border-radius: 4px;
     line-height: 20px;
     text-align: center;
     background-color: #fafafa;

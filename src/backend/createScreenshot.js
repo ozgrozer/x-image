@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer')
 
 const createScreenshot = async props => {
   try {
-    const { lang, width, theme, hideCard, hideThread, tweetId } = props
+    const { lang, width, theme, padding, hideCard, hideThread, tweetId } = props
 
     const browser = await puppeteer.launch({
       headless: true,
@@ -19,18 +19,19 @@ const createScreenshot = async props => {
     await page.setViewport({ width: pageWidth, height: pageHeight })
 
     await page.evaluate(props => {
-      const { theme, percent } = props
+      const { theme, padding, percent } = props
 
       const style = document.createElement('style')
       style.innerHTML = "* { font-family: -apple-system, BlinkMacSystemFont, Ubuntu, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important; }"
       document.getElementsByTagName('head')[0].appendChild(style)
 
       const body = document.querySelector('body')
+      body.style.padding = `${padding}px`
       body.style.backgroundColor = theme === 'dark' ? '#000' : '#fff'
       body.style.zoom = `${100 * percent}%`
       const articleWrapper = document.querySelector('#app > div')
       articleWrapper.style.border = 'none'
-    }, ({ theme, percent }))
+    }, ({ theme, padding, percent }))
 
     const imageBuffer = await page.screenshot({
       type: 'png',

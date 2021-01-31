@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/get-image', async (req, res) => {
-  const { tweetUrl, width, theme, hideCard, hideThread } = req.body
+  const { tweetUrl, width, theme, padding, hideCard, hideThread } = req.body
 
   const split = tweetUrl.split('/')
   const tweetId = split[split.length - 1]
@@ -25,6 +25,7 @@ app.post('/get-image', async (req, res) => {
   const screenshot = await createScreenshot({
     width,
     theme,
+    padding,
     tweetId,
     hideCard,
     hideThread,

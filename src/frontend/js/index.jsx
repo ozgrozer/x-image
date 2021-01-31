@@ -37,8 +37,8 @@ const App = () => {
         postOptions={{ method: 'post', url: '/get-image' }}
       >
         <fieldset disabled={formIsSubmitting}>
-          <div className='narrowInputs'>
-            <div className='inputWrapper full'>
+          <div className='narrowInputs one'>
+            <div className='inputWrapper'>
               <label htmlFor='tweetUrl'>Tweet URL</label>
               <Input
                 type='text'
@@ -50,7 +50,7 @@ const App = () => {
             </div>
           </div>
 
-          <div className='narrowInputs'>
+          <div className='narrowInputs two'>
             <div className='inputWrapper'>
               <label htmlFor='width'>Width</label>
               <Input
@@ -58,11 +58,25 @@ const App = () => {
                 type='text'
                 name='width'
                 value='1000'
-                placeholder='Width'
+                placeholder='1000'
                 validations={validations.empty}
               />
             </div>
 
+            <div className='inputWrapper'>
+              <label htmlFor='padding'>Padding</label>
+              <Input
+                value='50'
+                type='text'
+                id='padding'
+                name='padding'
+                placeholder='50'
+                validations={validations.empty}
+              />
+            </div>
+          </div>
+
+          <div className='narrowInputs three'>
             <div className='inputWrapper'>
               <label htmlFor='theme'>Theme</label>
               <Select id='theme' name='theme' value='light'>
@@ -70,9 +84,7 @@ const App = () => {
                 <option value='dark'>Dark</option>
               </Select>
             </div>
-          </div>
 
-          <div className='narrowInputs'>
             <div className='inputWrapper'>
               <label htmlFor='hideCard'>Hide Card</label>
               <Select id='hideCard' name='hideCard' value='false'>
