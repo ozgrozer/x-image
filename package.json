@@ -2,10 +2,11 @@
   "name": "tweet-image",
   "license": "MIT",
   "scripts": {
-    "dev": "concurrently \"npm:start\" \"npm:parcel\" -c \"green,blue\"",
-    "prestart": "npm run build",
-    "start": "nodemon --ignore .cache/ --ignore dist/ --ignore node_modules/ ./src/backend/server.js",
+    "dev": "concurrently \"npm:dev:local\" \"npm:parcel\" -c \"green,blue\"",
+    "dev:local": "nodemon --ignore .cache/ --ignore dist/ --ignore node_modules/ ./src/backend/server.js",
     "parcel": "parcel ./src/frontend/html/index.html --out-dir ./dist --public-url / --port 1271",
+    "prestart": "npm run build",
+    "start": "node ./src/backend/server.js",
     "build": "parcel build ./src/frontend/html/index.html --out-dir ./dist --public-url / --no-source-maps"
   },
   "dependencies": {
