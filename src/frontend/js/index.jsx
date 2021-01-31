@@ -66,7 +66,7 @@ const App = () => {
             <div className='inputWrapper'>
               <label htmlFor='padding'>Padding</label>
               <Input
-                value='50'
+                value='25'
                 type='text'
                 id='padding'
                 name='padding'
@@ -95,7 +95,7 @@ const App = () => {
 
             <div className='inputWrapper'>
               <label htmlFor='hideThread'>Hide Thread</label>
-              <Select id='hideThread' name='hideThread' value='false'>
+              <Select id='hideThread' name='hideThread' value='true'>
                 <option value='true'>True</option>
                 <option value='false'>False</option>
               </Select>
