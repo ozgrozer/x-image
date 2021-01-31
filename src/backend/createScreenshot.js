@@ -1,16 +1,19 @@
+const os = require('os')
 const puppeteer = require('puppeteer')
 
 const createScreenshot = async props => {
   try {
     const { lang, width, theme, hideCard, hideThread, tweetId } = props
 
+    const executablePath = os.type() === 'Darwin'
+      ? '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
+      : '/usr/bin/google-chrome-stable'
     const browser = await puppeteer.launch({
       headless: true,
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox'
-      ]
+      executablePath,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     })
+
     const page = await browser.newPage()
     await page.goto(`https://platform.twitter.com/embed/index.html?dnt=true&embedId=twitter-widget-0&frame=false&hideCard=${hideCard}&hideThread=${hideThread}&id=${tweetId}&lang=${lang}&theme=${theme}&widgetsVersion=ed20a2b%3A1601588405575`, { waitUntil: 'networkidle0' })
 
@@ -20,7 +23,6 @@ const createScreenshot = async props => {
     const pageHeight = 100
     await page.setViewport({ width: pageWidth, height: pageHeight })
 
-    const propsForPage = { theme: theme, percent: percent }
     await page.evaluate(props => {
       const { theme, percent } = props
       const body = document.querySelector('body')
@@ -28,11 +30,10 @@ const createScreenshot = async props => {
       body.style.zoom = `${100 * percent}%`
       const articleWrapper = document.querySelector('#app > div')
       articleWrapper.style.border = 'none'
-    }, (propsForPage))
+    }, ({ theme, percent }))
 
     const imageBuffer = await page.screenshot({
-      type: 'jpeg',
-      quality: 100,
+      type: 'png',
       fullPage: true,
       encoding: 'base64'
     })
