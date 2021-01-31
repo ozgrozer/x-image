@@ -1,16 +1,11 @@
-const os = require('os')
 const puppeteer = require('puppeteer')
 
 const createScreenshot = async props => {
   try {
     const { lang, width, theme, hideCard, hideThread, tweetId } = props
 
-    const executablePath = os.type() === 'Darwin'
-      ? '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
-      : '/usr/bin/google-chrome-stable'
     const browser = await puppeteer.launch({
       headless: true,
-      executablePath,
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     })
 
@@ -25,6 +20,11 @@ const createScreenshot = async props => {
 
     await page.evaluate(props => {
       const { theme, percent } = props
+
+      const style = document.createElement('style')
+      style.innerHTML = "* { font-family: -apple-system, Ubuntu, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important; }"
+      document.getElementsByTagName('head')[0].appendChild(style)
+
       const body = document.querySelector('body')
       body.style.backgroundColor = theme === 'dark' ? '#000' : '#fff'
       body.style.zoom = `${100 * percent}%`
