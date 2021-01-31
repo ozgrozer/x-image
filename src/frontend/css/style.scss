@@ -132,3 +132,24 @@ select {
     padding-top: (200px - 20px) / 2;
   }
 }
+
+.socials {
+  top: 20px;
+  right: 20px;
+  position: absolute;
+
+  a {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    vertical-align: top;
+    display: inline-block;
+    &:first-child {
+      margin-left: 0;
+    }
+
+    svg {
+      height: 100%;
+    }
+  }
+}
