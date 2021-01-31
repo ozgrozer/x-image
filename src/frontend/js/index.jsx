@@ -31,7 +31,13 @@ const App = () => {
           validations={validations.empty}
         />
 
-        {imageData ? <img src={`data:image/png;base64, ${imageData}`} className='generatedImage' /> : null}
+        {
+          imageData
+            ? (
+              <img src={`data:image/png;base64, ${imageData}`} className='generatedImage' />
+              )
+            : null
+        }
       </Form>
     </div>
   )
