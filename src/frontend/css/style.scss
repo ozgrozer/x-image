@@ -10,6 +10,10 @@ body, input, textarea, button {
   font-family: -apple-system, Ubuntu, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
+fieldset {
+  border: none;
+}
+
 form {
   width: 600px;
   margin: 50px auto;
