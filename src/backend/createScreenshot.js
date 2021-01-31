@@ -22,7 +22,7 @@ const createScreenshot = async props => {
       const { theme, percent } = props
 
       const style = document.createElement('style')
-      style.innerHTML = "* { font-family: -apple-system, Ubuntu, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important; }"
+      style.innerHTML = "* { font-family: -apple-system, BlinkMacSystemFont, Ubuntu, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important; }"
       document.getElementsByTagName('head')[0].appendChild(style)
 
       const body = document.querySelector('body')
