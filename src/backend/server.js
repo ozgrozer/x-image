@@ -17,18 +17,18 @@ app.get('/', (req, res) => {
 })
 
 app.post('/get-image', async (req, res) => {
-  const { tweetUrl } = req.body
+  const { tweetUrl, width, theme, hideCard, hideThread } = req.body
 
   const split = tweetUrl.split('/')
   const tweetId = split[split.length - 1]
 
   const screenshot = await createScreenshot({
+    width,
+    theme,
     tweetId,
-    lang: 'en',
-    width: 1800,
-    theme: 'light',
-    hideCard: 'false',
-    hideThread: 'false'
+    hideCard,
+    hideThread,
+    lang: 'en'
   })
   res.send(screenshot)
 })

@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-body, input, textarea, button {
+body, input, select {
   font-size: 18px;
   font-family: -apple-system, Ubuntu, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
@@ -15,27 +15,79 @@ fieldset {
 }
 
 form {
-  width: 600px;
+  width: 500px;
   margin: 50px auto;
+
+  button {
+    display: none;
+  }
 }
 
-input {
+input, select {
   width: 100%;
-  height: 56px;
-  padding: 0 20px;
+  height: 40px;
+  font-size: 16px;
+  padding: 0 15px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   border: 1px solid #cdd6dd;
   &:focus {
     border-color: #7fbdff;
+  }
+  &:disabled {
+    opacity: 1;
+    color: #aaa;
+    border-color: #ccc;
+    background-color: #fafaf9;
   }
   &.is-invalid {
     border-color: #d63030;
   }
 }
 
+select {
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px;
+  background-position: right 20px top 18px, right 15px top 18px;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+}
+
 .invalid-feedback {
   display: none;
   color: #d63030;
   margin-top: 5px;
+}
+
+.narrowInputs {
+  margin-top: 10px;
+  &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+
+  .inputWrapper {
+    float: left;
+    width: 245px;
+    margin-left: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &.full {
+      width: 100%;
+    }
+
+    label {
+      font-size: 10px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    label, input, select {
+      display: block;
+    }
+  }
 }
 
 .generatedImageWrapper {

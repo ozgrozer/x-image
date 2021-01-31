@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import { Form, Input } from 'rfv'
+import { Form, Input, Select } from 'rfv'
 
 import './../css/style.scss'
 
@@ -37,12 +37,58 @@ const App = () => {
         postOptions={{ method: 'post', url: '/get-image' }}
       >
         <fieldset disabled={formIsSubmitting}>
-          <Input
-            type='text'
-            name='tweetUrl'
-            validations={validations.empty}
-            placeholder='https://twitter.com/ozgrozer/status/1355138534777245697'
-          />
+          <div className='narrowInputs'>
+            <div className='inputWrapper full'>
+              <label htmlFor='tweetUrl'>Tweet URL</label>
+              <Input
+                type='text'
+                id='tweetUrl'
+                name='tweetUrl'
+                validations={validations.empty}
+                placeholder='https://twitter.com/ozgrozer/status/1355138534777245697'
+              />
+            </div>
+          </div>
+
+          <div className='narrowInputs'>
+            <div className='inputWrapper'>
+              <label htmlFor='width'>Width</label>
+              <Input
+                id='width'
+                type='text'
+                name='width'
+                value='1000'
+                placeholder='Width'
+                validations={validations.empty}
+              />
+            </div>
+
+            <div className='inputWrapper'>
+              <label htmlFor='theme'>Theme</label>
+              <Select id='theme' name='theme' value='light'>
+                <option value='light'>Light</option>
+                <option value='dark'>Dark</option>
+              </Select>
+            </div>
+          </div>
+
+          <div className='narrowInputs'>
+            <div className='inputWrapper'>
+              <label htmlFor='hideCard'>Hide Card</label>
+              <Select id='hideCard' name='hideCard' value='false'>
+                <option value='true'>True</option>
+                <option value='false'>False</option>
+              </Select>
+            </div>
+
+            <div className='inputWrapper'>
+              <label htmlFor='hideThread'>Hide Thread</label>
+              <Select id='hideThread' name='hideThread' value='false'>
+                <option value='true'>True</option>
+                <option value='false'>False</option>
+              </Select>
+            </div>
+          </div>
 
           <div className='generatedImageWrapper'>
             {
@@ -62,6 +108,8 @@ const App = () => {
             }
           </div>
         </fieldset>
+
+        <button />
       </Form>
     </div>
   )
