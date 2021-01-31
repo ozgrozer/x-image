@@ -4,7 +4,12 @@ const createScreenshot = async props => {
   try {
     const { lang, width, theme, hideCard, hideThread, tweetId } = props
 
-    const browser = await puppeteer.launch({ headless: true })
+    const browser = await puppeteer.launch({
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox'
+      ]
+    })
     const page = await browser.newPage()
     await page.goto(`https://platform.twitter.com/embed/index.html?dnt=true&embedId=twitter-widget-0&frame=false&hideCard=${hideCard}&hideThread=${hideThread}&id=${tweetId}&lang=${lang}&theme=${theme}&widgetsVersion=ed20a2b%3A1601588405575`, { waitUntil: 'networkidle0' })
 
