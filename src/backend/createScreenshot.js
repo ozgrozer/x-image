@@ -23,9 +23,17 @@ const createScreenshot = async props => {
       const articleWrapper = document.querySelector('#app > div')
       articleWrapper.style.border = 'none'
     }, (propsForPage))
-    await page.screenshot({ fullPage: true, path: `capture-${lang}-${theme}-${width}-${tweetId}.png` })
+
+    const imageBuffer = await page.screenshot({
+      type: 'jpeg',
+      quality: 100,
+      fullPage: true,
+      encoding: 'base64'
+    })
 
     await browser.close()
+
+    return imageBuffer
   } catch (err) {
     console.log(err)
   }

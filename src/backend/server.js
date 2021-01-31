@@ -15,15 +15,14 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', '..', 'dist', 'index.html'))
 })
 
-app.post('/get-image', (req, res) => {
-  createScreenshot({
+app.post('/get-image', async (req, res) => {
+  const screenshot = await createScreenshot({
     lang: 'en',
-    width: 1000,
+    width: 1100,
     theme: 'dark',
     hideCard: 'false',
     hideThread: 'false',
     tweetId: '1355138534777245697'
   })
-
-  res.json({ success: true })
+  res.send(screenshot)
 })
