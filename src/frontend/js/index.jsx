@@ -27,17 +27,21 @@ const App = () => {
         <Input
           type='text'
           name='tweetUrl'
-          placeholder='Tweet URL'
           validations={validations.empty}
+          placeholder='https://twitter.com/ozgrozer/status/1355138534777245697'
         />
 
-        {
-          imageData
-            ? (
-              <img src={`data:image/png;base64, ${imageData}`} className='generatedImage' />
-              )
-            : null
-        }
+        <div className='generatedImageWrapper'>
+          {
+            imageData
+              ? (
+                <img src={`data:image/png;base64, ${imageData}`} className='generatedImage' />
+                )
+              : (
+                <div className='helpText'>Type the tweet URL above</div>
+                )
+          }
+        </div>
       </Form>
     </div>
   )

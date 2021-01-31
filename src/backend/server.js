@@ -5,6 +5,7 @@ const port = process.env.PORT || 1270
 
 const createScreenshot = require('./createScreenshot')
 
+app.use(express.json())
 app.use(express.static(path.join(__dirname, '..', '..', 'dist')))
 
 app.listen(port, () => {
@@ -16,13 +17,18 @@ app.get('/', (req, res) => {
 })
 
 app.post('/get-image', async (req, res) => {
+  const { tweetUrl } = req.body
+
+  const split = tweetUrl.split('/')
+  const tweetId = split[split.length - 1]
+
   const screenshot = await createScreenshot({
+    tweetId,
     lang: 'en',
-    width: 1100,
-    theme: 'dark',
+    width: 1800,
+    theme: 'light',
     hideCard: 'false',
-    hideThread: 'false',
-    tweetId: '1355138534777245697'
+    hideThread: 'false'
   })
   res.send(screenshot)
 })

@@ -5,16 +5,49 @@
   box-sizing: border-box;
 }
 
-.generatedImage {
-  width: 550px;
+body, input, textarea, button {
+  font-size: 18px;
+  font-family: -apple-system, Ubuntu, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 form {
-  width: 550px;
-  margin: auto;
-  padding: 50px 0;
+  width: 600px;
+  margin: 50px auto;
+}
 
-  input {
+input {
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  border: 1px solid #cdd6dd;
+  &:focus {
+    border-color: #7fbdff;
+  }
+  &.is-invalid {
+    border-color: #d63030;
+  }
+}
+
+.invalid-feedback {
+  display: none;
+  color: #d63030;
+  margin-top: 5px;
+}
+
+.generatedImageWrapper {
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid #cdd6dd;
+
+  .generatedImage {
     width: 100%;
+  }
+
+  .helpText {
+    min-height: 200px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #fafafa;
+    padding-top: (200px - 20px) / 2;
   }
 }
