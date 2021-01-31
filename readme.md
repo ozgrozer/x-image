@@ -2,7 +2,7 @@
 
 Convert tweets to images
 
-<img src="./preview/1.png" alt="" width="500" />
+<img src="./preview/1.jpg" alt="" width="500" />
 
 ## Contribution
 
