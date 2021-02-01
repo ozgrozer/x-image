@@ -1,3 +1,4 @@
+const fs = require('fs')
 const path = require('path')
 const express = require('express')
 const app = express()
@@ -23,6 +24,13 @@ app.post('/get-image', async (req, res) => {
   const lastItem = splitTweetUrl[splitTweetUrl.length - 1]
   const splitLastItem = lastItem.split('?')
   const tweetId = splitLastItem[0]
+
+  const tweetsTxtPath = path.join(__dirname, '..', '..', 'tweets.txt')
+  const unixtime = Math.round(+new Date() / 1000)
+  const dataToSave = `${tweetUrl} ${unixtime}\n`
+  fs.appendFile(tweetsTxtPath, dataToSave, err => {
+    if (err) throw err
+  })
 
   const screenshot = await createScreenshot({
     width,
