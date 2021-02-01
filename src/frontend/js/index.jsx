@@ -133,7 +133,7 @@ const App = () => {
                       className='saveImageButton'
                       onClick={() => saveBase64AsFile(imageData, 'tweet.png')}
                     >
-                      Save
+                      <i className='icon icon-file_download' />
                     </button>
                   </div>
                   )

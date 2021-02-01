@@ -132,12 +132,22 @@ select {
   border: 1px solid #cdd6dd;
 
   .saveImageButton {
-    right: 10px;
-    bottom: 10px;
-    width: 100px;
+    right: 25px;
+    width: 50px;
+    padding: 0;
+    color: #fff;
+    height: 50px;
+    bottom: 25px;
+    border: none;
+    font-size: 22px;
     cursor: pointer;
+    text-align: center;
     position: absolute;
-    text-transform: uppercase;
+    border-radius: 50%;
+    background-color: #1ea1f3;
+    &:hover {
+      background-color: darken(#1ea1f3, 10%);
+    }
   }
 
   .generatedImage {
@@ -161,7 +171,7 @@ select {
   position: absolute;
 
   a {
-    font-size: 20px;
+    font-size: 24px;
     margin-left: 10px;
     vertical-align: top;
     display: inline-block;
@@ -173,7 +183,7 @@ select {
       color: #161b21;
     }
     .icon-twitter {
-      color: #1DA1F2;
+      color: #1ea1f3;
     }
   }
 }
