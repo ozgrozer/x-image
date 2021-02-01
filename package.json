@@ -7,7 +7,8 @@
     "parcel": "parcel ./src/frontend/html/index.html --out-dir ./dist --public-url / --port 1271",
     "prestart": "npm run build",
     "start": "node ./src/backend/server.js",
-    "build": "parcel build ./src/frontend/html/index.html --out-dir ./dist --public-url / --no-source-maps"
+    "build": "parcel build ./src/frontend/html/index.html --out-dir ./dist --public-url / --no-source-maps",
+    "icomoon": "node ./src/scripts/icomoon.js"
   },
   "dependencies": {
     "babel-core": "^6.26.3",
