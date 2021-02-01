@@ -67,6 +67,7 @@ input, select, button {
 }
 button {
   cursor: pointer;
+  background-color: #fafaf9;
   &:hover {
     background-color: darken(#fafaf9, 10%);
   }
