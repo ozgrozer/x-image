@@ -16,6 +16,10 @@ fieldset {
   border: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 form {
   width: 500px;
   margin: 50px auto;
@@ -141,8 +145,7 @@ select {
   position: absolute;
 
   a {
-    width: 20px;
-    height: 20px;
+    font-size: 20px;
     margin-left: 10px;
     vertical-align: top;
     display: inline-block;
@@ -150,8 +153,11 @@ select {
       margin-left: 0;
     }
 
-    svg {
-      height: 100%;
+    .icon-github {
+      color: #161b21;
+    }
+    .icon-twitter {
+      color: #1DA1F2;
     }
   }
 }
