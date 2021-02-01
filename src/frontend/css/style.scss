@@ -1,5 +1,7 @@
 @import './../font/icomoon/icomoon.css';
 
+$formWidth: 550px;
+
 $mobile-max: 767px;
 $tablet-min: 768px;
 $tablet-max: 991px;
@@ -35,7 +37,7 @@ form {
     padding: 30px;
   }
   @media (min-width: $tablet-min) {
-    width: 500px;
+    width: $formWidth;
     margin: 50px auto;
   }
 }
@@ -101,7 +103,7 @@ select {
         width: calc((100% / 2) - 5px);
       }
       @media (min-width: $tablet-min) {
-        width: 245px;
+        width: ($formWidth - 10px) / 2;
       }
     }
   }
@@ -111,7 +113,7 @@ select {
         width: calc((100% / 3) - (20px / 3));
       }
       @media (min-width: $tablet-min) {
-        width: 160px;
+        width: ($formWidth - 20px) / 3;
       }
     }
   }
