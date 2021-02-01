@@ -23,10 +23,6 @@ a {
 form {
   width: 500px;
   margin: 50px auto;
-
-  .submitButton {
-    display: none;
-  }
 }
 
 input, select, button {
@@ -50,6 +46,12 @@ input, select, button {
   }
   &.is-invalid {
     border-color: #d63030;
+  }
+}
+button {
+  cursor: pointer;
+  &:hover {
+    background-color: darken(#fafaf9, 10%);
   }
 }
 
@@ -92,8 +94,22 @@ select {
   .inputWrapper {
     float: left;
     margin-left: 10px;
+    position: relative;
     &:first-child {
       margin-left: 0;
+    }
+
+    .inputWithButton {
+      position: relative;
+
+      .submitButton {
+        padding: 0;
+        top: 10px;
+        width: 20px;
+        right: 10px;
+        height: 20px;
+        position: absolute;
+      }
     }
 
     label {

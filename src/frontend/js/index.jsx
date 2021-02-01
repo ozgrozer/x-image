@@ -50,13 +50,19 @@ const App = () => {
           <div className='narrowInputs one'>
             <div className='inputWrapper'>
               <label htmlFor='tweetUrl'>Tweet URL</label>
-              <Input
-                type='text'
-                id='tweetUrl'
-                name='tweetUrl'
-                validations={validations.empty}
-                placeholder='https://twitter.com/ozgrozer/status/1355138534777245697'
-              />
+              <div className='inputWithButton'>
+                <Input
+                  type='text'
+                  id='tweetUrl'
+                  name='tweetUrl'
+                  validations={validations.empty}
+                  placeholder='https://twitter.com/ozgrozer/status/1355138534777245697'
+                />
+
+                <button type='submit' className='submitButton'>
+                  <i className='icon icon-navigate_next' />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -143,8 +149,6 @@ const App = () => {
             }
           </div>
         </fieldset>
-
-        <button className='submitButton' />
       </Form>
 
       <div className='socials'>
