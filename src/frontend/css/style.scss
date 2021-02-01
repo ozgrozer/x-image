@@ -1,5 +1,14 @@
 @import './../font/icomoon/icomoon.css';
 
+$mobile-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 991px;
+$computer-min: 992px;
+$computer-max: 1199px;
+$largescreen-min: 1200px;
+$largescreen-max: 1919px;
+$widescreen-min: 1920px;
+
 * {
   margin: 0;
   padding: 0;
@@ -21,8 +30,14 @@ a {
 }
 
 form {
-  width: 500px;
-  margin: 50px auto;
+  @media (max-width: $mobile-max) {
+    width: 100%;
+    padding: 30px;
+  }
+  @media (min-width: $tablet-min) {
+    width: 500px;
+    margin: 50px auto;
+  }
 }
 
 input, select, button {
@@ -82,12 +97,22 @@ select {
   }
   &.two {
     .inputWrapper {
-      width: 245px;
+      @media (max-width: $mobile-max) {
+        width: calc((100% / 2) - 5px);
+      }
+      @media (min-width: $tablet-min) {
+        width: 245px;
+      }
     }
   }
   &.three {
     .inputWrapper {
-      width: 160px;
+      @media (max-width: $mobile-max) {
+        width: calc((100% / 3) - (20px / 3));
+      }
+      @media (min-width: $tablet-min) {
+        width: 160px;
+      }
     }
   }
 
@@ -166,9 +191,15 @@ select {
 }
 
 .socials {
-  top: 20px;
-  right: 20px;
-  position: absolute;
+  position: fixed;
+  @media (max-width: $mobile-max) {
+    top: 10px;
+    right: 10px;
+  }
+  @media (min-width: $tablet-min) {
+    top: 20px;
+    right: 20px;
+  }
 
   a {
     font-size: 24px;
