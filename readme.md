@@ -6,7 +6,7 @@ Convert tweets to images
 
 [https://tweet-image.herokuapp.com/](https://tweet-image.herokuapp.com/) (font issue)
 
-<img src="./preview/2.jpg" alt="" width="500" />
+<img src="./preview/3.jpg" alt="" width="500" />
 
 ## Contribution
 
