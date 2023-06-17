@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @import './../font/icomoon/icomoon.css';
 
 $formWidth: 550px;
@@ -101,20 +103,20 @@ select {
   &.two {
     .inputWrapper {
       @media (max-width: $mobile-max) {
-        width: calc((100% / 2) - 5px);
+        width: calc(math.div(100%, 2) - 5px);
       }
       @media (min-width: $tablet-min) {
-        width: ($formWidth - 10px) / 2;
+        width: math.div(($formWidth - 10px), 2);
       }
     }
   }
   &.three {
     .inputWrapper {
       @media (max-width: $mobile-max) {
-        width: calc((100% / 3) - (20px / 3));
+        width: calc(math.div(100%, 3) - math.div(20px, 3));
       }
       @media (min-width: $tablet-min) {
-        width: ($formWidth - 20px) / 3;
+        width: math.div($formWidth - 20px, 3);
       }
     }
   }
@@ -189,7 +191,7 @@ select {
     text-align: center;
     border-radius: 4px;
     background-color: #fafafa;
-    padding-top: (200px - 20px) / 2;
+    padding-top: math.div(200px - 20px, 2);
   }
 }
 
