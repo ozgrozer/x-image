@@ -10,6 +10,10 @@
     "build": "parcel build ./src/frontend/html/index.html --dist-dir ./dist --public-url / --no-source-maps",
     "icomoon": "node ./src/scripts/icomoon.js"
   },
+  "engines": {
+    "node": "14.x"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "dependencies": {
     "concurrently": "^5.3.0",
     "express": "^4.17.1",
