@@ -5,7 +5,7 @@ const createScreenshot = async props => {
     const { lang, width, theme, padding, hideCard, hideThread, tweetId } = props
 
     const browser = await puppeteer.launch({
-      headless: true,
+      headless: 'new',
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     })
 
