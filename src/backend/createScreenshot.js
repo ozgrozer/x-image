@@ -7,6 +7,8 @@ const createScreenshot = async props => {
     const { lang, width, theme, padding, hideCard, hideThread, tweetId } = props
 
     let browser
+    console.log('process.env')
+    console.log(process.env)
     if (process.env.VERCEL_ENV === 'production') {
       const executablePath = await chromium.executablePath()
       browser = await puppeteerCore.launch({
