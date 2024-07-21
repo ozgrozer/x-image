@@ -1,6 +1,6 @@
 {
+  "license": "GPL-3.0",
   "name": "tweet-image",
-  "license": "MIT",
   "scripts": {
     "dev": "concurrently \"npm:dev:local\" \"npm:parcel\" -c \"green,blue\"",
     "dev:local": "nodemon --ignore .cache/ --ignore dist/ --ignore node_modules/ ./src/backend/server.js",
