@@ -75,7 +75,9 @@ export default async (req, res) => {
       encoding: 'base64'
     })
 
-    await browser.close()
+    if (process.env.VERCEL_ENV !== 'production') {
+      await browser.close()
+    }
 
     res.json({ data: imageBuffer })
   } catch (err) {
