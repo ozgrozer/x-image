@@ -1,7 +1,6 @@
-.DS_Store
-.cache
-dist
+.next
 node_modules
-yarn-error.log
+
+.DS_Store
 tweets.txt
-.parcel-cache
+yarn-error.log

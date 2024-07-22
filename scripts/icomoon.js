@@ -1,9 +1,9 @@
+const fs = require('fs')
 const path = require('path')
 const https = require('https')
-const fs = require('fs')
 
 const icomoonUrl = 'https://i.icomoon.io/public/temp/ef916e464f/tweet-image/style.css'
-const localPath = path.join(__dirname, '..', 'frontend', 'font', 'icomoon')
+const localPath = path.join(__dirname, '..', 'styles', 'font', 'icomoon')
 
 const readUrl = url => {
   return new Promise((resolve, reject) => {

@@ -1,8 +1,6 @@
+import Head from 'next/head'
 import React, { useState } from 'react'
 import { Form, Input, Select } from 'rfv'
-import { createRoot } from 'react-dom/client'
-
-import './../css/style.scss'
 
 const validations = {
   empty: [
@@ -14,7 +12,7 @@ const validations = {
   ]
 }
 
-const App = () => {
+export default () => {
   const [imageData, setImageData] = useState()
 
   const [formIsSubmitting, setFormIsSubmitting] = useState(false)
@@ -26,7 +24,7 @@ const App = () => {
   }
   const postSubmit = res => {
     setFormIsSubmitting(false)
-    setImageData(res.data)
+    setImageData(res.data.data)
   }
 
   const saveBase64AsFile = (base64, fileName) => {
@@ -41,10 +39,14 @@ const App = () => {
 
   return (
     <div>
+      <Head>
+        <title>Tweet Image</title>
+      </Head>
+
       <Form
         onSubmit={onSubmit}
         postSubmit={postSubmit}
-        postOptions={{ method: 'post', url: '/get-image' }}
+        postOptions={{ method: 'post', url: '/api/get-image' }}
       >
         <fieldset disabled={formIsSubmitting}>
           <div className='narrowInputs one'>
@@ -163,6 +165,3 @@ const App = () => {
     </div>
   )
 }
-
-createRoot(document.getElementById('root'))
-  .render(<App />)
