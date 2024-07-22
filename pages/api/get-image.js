@@ -15,7 +15,6 @@ export default async (req, res) => {
     const tweetId = splitLastItem[0]
 
     let browser
-    console.log({ VERCEL_ENV: process.env.VERCEL_ENV })
     if (process.env.VERCEL_ENV === 'production') {
       const executablePath = await chromium.executablePath()
       browser = await puppeteerCore.launch({
