@@ -56,18 +56,6 @@ export default async (req, res) => {
           body.style.backgroundColor = theme === 'dark' ? '#000' : '#fff'
           body.style.zoom = `${100 * percent}%`
         }
-
-        const innerDiv = document.querySelector('#app > div > div > div')
-        if (innerDiv) {
-          innerDiv.style.border = 'none'
-        } else {
-          console.warn('Element #app > div not found')
-        }
-
-        const copyLinkToPostButton = document.querySelector('.css-18t94o4.css-1dbjc4n.r-1awozwy.r-18u37iz.r-1wbh5a2.r-1ny4l3l.r-o7ynqc.r-6416eg')
-        if (copyLinkToPostButton) {
-          copyLinkToPostButton.style.display = 'none'
-        }
       },
       { theme, padding, percent }
     )
