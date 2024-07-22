@@ -2,9 +2,7 @@
 
 Convert tweets to images
 
-[https://tweet-image.glitch.me/](https://tweet-image.glitch.me/)
-
-[https://tweet-image.herokuapp.com/](https://tweet-image.herokuapp.com/) (font issue)
+[https://tweet-image-nu.vercel.app](https://tweet-image-nu.vercel.app)
 
 <img src="./preview/3.jpg" alt="" width="500" />
 
@@ -14,4 +12,4 @@ Feel free to contribute. Open a new [issue](https://github.com/ozgrozer/tweet-im
 
 ## License
 
-[MIT](license)
+[GPL-3.0](license)
