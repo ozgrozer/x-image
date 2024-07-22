@@ -1,6 +1,6 @@
 # x-image
 
-Convert tweets to images
+Convert X posts to images
 
 [https://x-image.vercel.app](https://x-image.vercel.app)
 

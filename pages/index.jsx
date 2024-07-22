@@ -40,7 +40,7 @@ export default () => {
   return (
     <div>
       <Head>
-        <title>Tweet Image</title>
+        <title>X Image</title>
       </Head>
 
       <Form
@@ -51,14 +51,14 @@ export default () => {
         <fieldset disabled={formIsSubmitting}>
           <div className='narrowInputs one'>
             <div className='inputWrapper'>
-              <label htmlFor='tweetUrl'>Tweet URL</label>
+              <label htmlFor='xUrl'>X URL</label>
               <div className='inputWithButton'>
                 <Input
                   type='text'
-                  id='tweetUrl'
-                  name='tweetUrl'
+                  id='xUrl'
+                  name='xUrl'
                   validations={validations.empty}
-                  placeholder='https://twitter.com/ozgrozer/status/1355138534777245697'
+                  placeholder='https://x.com/ozgrozer/status/1812591967756255298'
                 />
 
                 <button type='submit' className='submitButton'>
@@ -133,7 +133,7 @@ export default () => {
                     <button
                       type='button'
                       className='saveImageButton'
-                      onClick={() => saveBase64AsFile(imageData, 'tweet.png')}
+                      onClick={() => saveBase64AsFile(imageData, 'x.png')}
                     >
                       <i className='icon icon-file_download' />
                     </button>
@@ -144,7 +144,7 @@ export default () => {
                     {
                       formIsSubmitting
                         ? (<div>Loading...</div>)
-                        : (<div>Type the tweet URL above</div>)
+                        : (<div>Type the X URL above</div>)
                     }
                   </div>
                   )

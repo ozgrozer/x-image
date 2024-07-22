@@ -1,6 +1,6 @@
 {
+  "name": "x-image",
   "license": "GPL-3.0",
-  "name": "tweet-image",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

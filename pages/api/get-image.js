@@ -7,12 +7,12 @@ export const dynamic = 'force-dynamic'
 
 export default async (req, res) => {
   try {
-    const { lang, width, theme, padding, hideCard, hideThread, tweetUrl } = req.body
+    const { lang, width, theme, padding, hideCard, hideThread, xUrl } = req.body
 
-    const splitTweetUrl = tweetUrl.split('/')
-    const lastItem = splitTweetUrl[splitTweetUrl.length - 1]
+    const splitUrl = xUrl.split('/')
+    const lastItem = splitUrl[splitUrl.length - 1]
     const splitLastItem = lastItem.split('?')
-    const tweetId = splitLastItem[0]
+    const xPostId = splitLastItem[0]
 
     let browser
     if (process.env.VERCEL_ENV === 'production') {
@@ -31,8 +31,8 @@ export default async (req, res) => {
     }
 
     const page = await browser.newPage()
-    await page.goto(`https://platform.twitter.com/embed/index.html?dnt=true&embedId=twitter-widget-0&frame=false&hideCard=${hideCard}&hideThread=${hideThread}&id=${tweetId}&lang=${lang}&theme=${theme}&widgetsVersion=ed20a2b%3A1601588405575`, { waitUntil: 'networkidle2' })
-    console.log(`https://platform.twitter.com/embed/index.html?dnt=true&embedId=twitter-widget-0&frame=false&hideCard=${hideCard}&hideThread=${hideThread}&id=${tweetId}&lang=${lang}&theme=${theme}&widgetsVersion=ed20a2b%3A1601588405575`)
+    await page.goto(`https://platform.twitter.com/embed/index.html?dnt=true&embedId=twitter-widget-0&frame=false&hideCard=${hideCard}&hideThread=${hideThread}&id=${xPostId}&lang=${lang}&theme=${theme}&widgetsVersion=ed20a2b%3A1601588405575`, { waitUntil: 'networkidle2' })
+    console.log(`https://platform.twitter.com/embed/index.html?dnt=true&embedId=twitter-widget-0&frame=false&hideCard=${hideCard}&hideThread=${hideThread}&id=${xPostId}&lang=${lang}&theme=${theme}&widgetsVersion=ed20a2b%3A1601588405575`)
 
     const embedDefaultWidth = 550
     const percent = width / embedDefaultWidth
