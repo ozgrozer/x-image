@@ -7,8 +7,9 @@ export const dynamic = 'force-dynamic'
 
 export default async (req, res) => {
   try {
-    const { lang, width, theme, padding, hideCard, hideThread, xUrl } = req.body
+    const { xUrl, width, theme, padding, hideCard, hideThread } = req.body
 
+    const lang = 'en'
     const splitUrl = xUrl.split('/')
     const lastItem = splitUrl[splitUrl.length - 1]
     const splitLastItem = lastItem.split('?')
