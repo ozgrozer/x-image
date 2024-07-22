@@ -154,12 +154,12 @@ export default () => {
       </Form>
 
       <div className='socials'>
-        <a href='https://github.com/ozgrozer' target='_blank' rel='noreferrer'>
+        <a href='https://github.com/ozgrozer/x-image' target='_blank' rel='noreferrer'>
           <i className='icon icon-github' />
         </a>
 
-        <a href='https://twitter.com/ozgrozer' target='_blank' rel='noreferrer'>
-          <i className='icon icon-twitter' />
+        <a href='https://x.com/ozgrozer' target='_blank' rel='noreferrer'>
+          <i className='icon icon-x' />
         </a>
       </div>
     </div>
