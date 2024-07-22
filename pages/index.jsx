@@ -84,7 +84,7 @@ export default () => {
             <div className='inputWrapper'>
               <label htmlFor='padding'>Padding</label>
               <Input
-                value='25'
+                value='10'
                 type='text'
                 id='padding'
                 name='padding'
