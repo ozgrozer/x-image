@@ -57,9 +57,9 @@ export default async (req, res) => {
           body.style.zoom = `${100 * percent}%`
         }
 
-        const articleWrapper = document.querySelector('#app > div')
-        if (articleWrapper) {
-          articleWrapper.style.border = 'none'
+        const innerDiv = document.querySelector('#app > div > div > div')
+        if (innerDiv) {
+          innerDiv.style.border = 'none'
         } else {
           console.warn('Element #app > div not found')
         }
