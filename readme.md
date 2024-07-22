@@ -2,9 +2,13 @@
 
 Convert X posts to images
 
+## Try Out
+
 [https://x-image.vercel.app](https://x-image.vercel.app)
 
-<img src="./preview/3.jpg" alt="" width="500" />
+## Preview
+
+<img src="./preview/Screenshot 2024-07-22 at 3.49.40 PM.png" alt="" width="500" />
 
 ## Contribution
 
