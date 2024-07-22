@@ -73,7 +73,7 @@ export default async (req, res) => {
       encoding: 'base64'
     })
 
-    // await browser.close()
+    await browser.close()
 
     res.json({ data: imageBuffer })
   } catch (err) {
