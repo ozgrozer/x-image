@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer'
 import puppeteerCore from 'puppeteer-core'
 import chromium from '@sparticuz/chromium'
 
-export const maxDuration = 300
+export const maxDuration = 60
 export const dynamic = 'force-dynamic'
 
 export default async (req, res) => {
