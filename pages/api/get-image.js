@@ -60,8 +60,6 @@ export default async (req, res) => {
       { theme, padding, percent }
     )
 
-    await page.waitForNetworkIdle({ idleTime: 500 })
-
     const imageBuffer = await page.screenshot({
       type: 'png',
       fullPage: true,
